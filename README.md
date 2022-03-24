@@ -7,8 +7,10 @@
 </div>
 
 # JDBC - Java Database Connectivity
+Define quais são os metodos que tem de estar presentes ao contruir uma aplicação que se conecta ao banco de dados
 
-
+### Porta
+Existe uma relação com processo quando se faz comunicação em rede é preciso passar o IP para acessar a outra maquina, quando manda uma informação de uma maquina com um IP X para outra Y, essa informação não é o suficiente, porque apartir da maquina que tem o IP X tem um processo e a maquina Y tambem tem processos, quando a informação chega em Y ele não sabe qual processo vai atende a essa requisição, então informa se a porta para identificar o processo.
 
 
 ### Autor
