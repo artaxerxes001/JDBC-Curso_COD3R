@@ -7,16 +7,47 @@
 </div>
 
 # JDBC - Java Database Connectivity
+
 Define quais são os metodos que tem de estar presentes ao contruir uma aplicação que se conecta ao banco de dados
 
 ### Porta
-Existe uma relação com processo quando se faz comunicação em rede é preciso passar o IP para acessar a outra maquina, quando manda uma informação de uma maquina com um IP X para outra Y, essa informação não é o suficiente, porque apartir da maquina que tem o IP X tem um processo e a maquina Y tambem tem processos, quando a informação chega em Y ele não sabe qual processo vai atende a essa requisição, então informa se a porta para identificar o processo.
 
+Existe uma relação com processo quando se faz comunicação em rede é preciso passar o IP para acessar a outra maquina,
+quando manda uma informação de uma maquina com um IP X para outra Y, essa informação não é o suficiente, porque apartir
+da maquina que tem o IP X tem um processo e a maquina Y tambem tem processos, quando a informação chega em Y ele não
+sabe qual processo vai atende a essa requisição, então informa se a porta para identificar o processo.
+
+### PreparatSegment
+
+É uma forma segura de passar comandos sql vindos do usuario, evitando coisas como o SQLIngection
+
+```java
+public class NovaPessoa {
+    public static void main(String[] args) throws SQLException {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Nome: ");
+        String nome = scanner.nextLine();
+
+        Connection conexao =FabricaConexao.getConexao();
+
+        String sql ="INSERT INTO pessoas (nome) VALEUS(?)";
+        PreparedStatement preparedStatement = conexao.prepareStatement(sql);
+        preparedStatement.setString(1, nome);
+        preparedStatement.execute();
+
+        scanner.close();
+
+    }
+
+}
+```
 
 ### Autor
 
 #### Artaxerxes Nazareno
+
 <img src="https://github.com/artaxerxes001/artaxerxes001/raw/main/imagens/eu.jpg" width="200">
 
 ##### Sigam me:
+
 [![Twitter Badge](https://img.shields.io/badge/-@artaxerxes0001-1ca0f1?style=flat-square&labelColor=1ca0f1&logo=twitter&logoColor=white&link=https://twitter.com/tgmarinho)](https://twitter.com/Artaxerxes0001)  [![Linkedin Badge](https://img.shields.io/badge/-Artaxerxes_Nazareno-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/artaxerxes-nazare/)](https://www.linkedin.com/in/artaxerxes-nazare/) [![Gmail Badge](https://img.shields.io/badge/-artaxerxesnazare@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:artaxerxesnazare@gmail.comm)](mailto:artaxerxesnazare@gmail.com)
