@@ -1,5 +1,8 @@
 package consulta;
 
+import model.FabricaConexao;
+import model.Pessoa;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;

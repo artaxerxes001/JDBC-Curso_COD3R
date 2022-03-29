@@ -40,7 +40,15 @@ public class DAO {
             }
         }
     }
+public void close(){
+    try {
+        getConexao().close();
+    } catch (SQLException e) {
 
+    }finally{
+        conexao = null;
+    }
+}
     private Connection getConexao() {
         try {
             if (conexao != null && !conexao.isClosed()) {

@@ -1,5 +1,7 @@
 package excluir;
 
+import model.FabricaConexao;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -14,18 +16,18 @@ public class ExcluirPessoa {
         Connection conexao = FabricaConexao.getConexao();
         String sql = "DELETE FROM pessoas WHERE codigo = ?";
         PreparedStatement preparedStatement = conexao.prepareStatement(sql);
-        preparedStatement.setInt(1,codigo);
+        preparedStatement.setInt(1, codigo);
 
 //        executeUpdate() mostra o numero de linhas afetadas
         int contador = preparedStatement.executeUpdate();
 
-        if (contador > 0){
+        if (contador > 0) {
             System.out.println("model.Pessoa excluida com sucesso!");
-        }else {
+        } else {
             System.out.println("Nada feito!");
         }
 
-        System.out.println("linhas afetadas: " +contador);
+        System.out.println("linhas afetadas: " + contador);
 
         scanner.close();
         conexao.close();

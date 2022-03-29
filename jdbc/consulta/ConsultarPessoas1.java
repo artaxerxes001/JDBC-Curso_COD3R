@@ -1,5 +1,8 @@
 package consulta;
 
+import model.FabricaConexao;
+import model.Pessoa;
+
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
