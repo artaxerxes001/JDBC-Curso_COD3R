@@ -1,6 +1,9 @@
+package alterar;
+
+import model.FabricaConexao;
+import model.Pessoa;
+
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class AlterarNomePessoaDesafio {
@@ -31,7 +34,7 @@ public class AlterarNomePessoaDesafio {
             System.out.println("Atualização feita com sucesso");
 
         }else {
-            System.out.println("Pessoa não existe");
+            System.out.println("model.Pessoa não existe");
         }
         conexao.close();
 

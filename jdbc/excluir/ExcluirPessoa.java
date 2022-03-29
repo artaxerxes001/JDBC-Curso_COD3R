@@ -1,3 +1,5 @@
+package excluir;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -18,7 +20,7 @@ public class ExcluirPessoa {
         int contador = preparedStatement.executeUpdate();
 
         if (contador > 0){
-            System.out.println("Pessoa excluida com sucesso!");
+            System.out.println("model.Pessoa excluida com sucesso!");
         }else {
             System.out.println("Nada feito!");
         }

@@ -22,15 +22,17 @@ sabe qual processo vai atende a essa requisição, então informa se a porta par
 É uma forma segura de passar comandos sql vindos do usuario, evitando coisas como o SQLIngection
 
 ```java
-public class NovaPessoa {
+import model.FabricaConexao;
+
+public class inserir.NovaPessoa {
     public static void main(String[] args) throws SQLException {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Nome: ");
         String nome = scanner.nextLine();
 
-        Connection conexao =FabricaConexao.getConexao();
+        Connection conexao = FabricaConexao.getConexao();
 
-        String sql ="INSERT INTO pessoas (nome) VALEUS(?)";
+        String sql = "INSERT INTO pessoas (nome) VALEUS(?)";
         PreparedStatement preparedStatement = conexao.prepareStatement(sql);
         preparedStatement.setString(1, nome);
         preparedStatement.execute();
